@@ -1,0 +1,148 @@
+<!-- Button trigger modal -->
+{{!-- <button type="button" class="btn btn-primary" data-bs-toggle="modall" data-bs-target="#exampleModall">
+    Launch demo modal
+</button> --}}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabell" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add new Bank to the market</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="/add_bank" novalidate>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Enter Bank Name</label>
+                        <input type="text" name="bname" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Enter Available stock</label>
+                        <input type="text" name="stock" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Enter price per stock</label>
+                        <input type="text" name="scost" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="row my-4">
+    <div class="col-6">
+        <h1>List of Bank</h1>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+        <a href="/addbank" type="button" data-bs-toggle="modal" data-bs-target="#exampleModall"
+            class="btn btn-success align-self btn-md"><i class="bi bi-bank"></i> Add Bank</a>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th class="text-center" scope="col">Available stocks</th>
+            <th class="text-center" scope="col">Cost per Stock</th>
+            <th class="text-center" scope="col">Action</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each rows}}
+        <tr>
+            <script>document.write("<th scope='row'>" + ({{@index}} + 1) + "</th>")</script>
+            <td  >{{this.name}}</td>
+            <td class="text-center">{{this.available_stock}} units</td>
+            <td class="text-center">Rs. {{this.per_s_price}} /-</td>
+            <td class="text-center">
+                <a  href="/edit_bank/{{this.id}}" type="button" class=" btn btn-success btn-sm "> <i
+                        class="bi bi-pencil"></i> Edit</a>
+                <a  href="/dbank/{{this.id}}" type="button" class=" btn btn-success btn-sm "> <i class="bi bi-x"></i>
+                    Delete bank</a>
+
+
+            </td>
+
+
+        </tr>
+        {{/each}}
+
+
+    </tbody>
+</table>
+
+
+
+<!-- Modal  to buy shares-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">List of Banks</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/ins" method="POST" novalidate>
+                    <div class="col-auto my-1">
+                        <label class="mr-sm-2" for="inlineFormCustomSelect">Banks</label>
+                        <select onchange="changed()" name="b_id" id="opt" class="custom-select mr-sm-2"
+                            id="inlineFormCustomSelect">
+                            <option selected>Please choose you bank</option>
+                            {{#each rows}}
+                            <option value="{{this.id}}">{{this.name}}</option>
+                            {{!-- <option value="2">Two</option>
+                            <option value="3">Three</option> --}}
+                            {{/each}}
+
+                        </select>
+                    </div>
+
+                    <div class="mb-3 my-5">
+
+
+                        <label class="form-label">Number of share you want to buy</label>
+                        <input name="num_share" type="number" class="form-control" id="exampleInputPassword1"
+                            max="{{this.available_stock}}">
+
+
+                    </div>
+
+
+
+                    {{!-- <a href="/insert" type="button" class="btn btn-primary">Submit</a> --}}
+                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="col-12 d-grid my-5">
+    <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Buy a share from the avobe
+        banks</button>
+</div>

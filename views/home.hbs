@@ -1,0 +1,88 @@
+<h1 class="text-center">Welcome to my IPO share market</h1>
+
+{{#if bank_delete}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Congratulations!!!</strong> The bank has been sucessfully deleted.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+
+
+{{#if sell}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Congratulations!!!</strong> Your share has been sold and total amount has been credited to your linked account.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#if add}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Congratulations!!!</strong> The bank has been sucessfully added, now you can buy and sell your shares.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#if update}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Congratulations!!!</strong> Your data has been successfully Updated.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#if insert}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Congratulations!!!</strong> You have successfully bought your share and you can now check in the DashBoard.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+
+{{#if out}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Sorry!!!</strong> We Don't have that much of stock available, please visit later for more stocks.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#if p_bank}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Congratulations!!!</strong> Your stock has been added to the previous stock.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#if equal}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Congratulations!!!</strong> Your have completely sold all your stocks.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#if less}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Congratulations!!!</strong> You have sold your desired number of stock.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#if more}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Soryy!!!</strong> You don't have that much of stocks available.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+
+
+
+<div class="jumbotron bg-info">
+  <h1 class="display-4 text-center">IPO share Market</h1>
+  <p class="lead mx-4">An unlisted company (A company which is not listed on the stock exchange) announces initial public offering (IPO) when it decides to raise funds through sale of securities or shares for the first time to the public. In other words, IPO is the selling of securities to the public in the primary market.</p>
+  <hr class="my-4">
+  <strong class="mx-2">What Is an Initial Public Offering (IPO)?</strong>
+  <p class="mx-4">An initial public offering (IPO) refers to the process of offering shares of a private corporation to the public in a new stock issuance. An IPO allows a company to raise capital from public investors. The transition from a private to a public company can be an important time for private investors to fully realize gains from their investment as it typically includes a share premium for current private investors. Meanwhile, it also allows public investors to participate in the offering.</p>
+  <a class="btn btn-primary btn-lg col-12 d-grid" href="/market" role="button">Show Market</a>
+</div>
+
+

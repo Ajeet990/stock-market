@@ -1,0 +1,32 @@
+<div class="container my-4">
+    <b>Name</b> : Ajeet chaudhary<br>
+    <b>Address</b> : Pratappur-9 pratappur, Nawalparasi Nepal<br>
+    <b>Email</b> : ajeettharu0@gmial.com<br>
+    <strong>Total investment till Now : </strong> Rs. {{T_investment}}<br>
+    <strong>Total number of Stock In my Account Or : </strong>{{T_stock}} units<br>
+    <strong>Total Sold till Now : </strong> Rs. {{T_sold}}<br>
+    <strong>Current amount(value) of my stock : </strong> Rs. {{T_amt}}<br>
+    <script>
+        let num = ({{T_investment}} - {{T_sold}});
+        if(num > 0){
+            document.write('Overall i am in Loss of : Rs.'+(num))
+
+        }
+        else if(num == 0){
+            document.write('neutral')
+        }
+        else{
+            document.write('<b>Overall i am in Profit of : Rs. </b>'+(-num));
+        }
+    </script>
+
+
+</div>
+<div class="row ">
+    <div class="col-6">
+    <a href="/my_stock" class="btn btn-primary btn-sm d-grid">My stock list</a>
+    </div>
+    <div class="col-6">
+    <a href="/transaction" class="btn btn-primary btn-sm d-grid">All Transanctions</a>
+    </div>
+</div>

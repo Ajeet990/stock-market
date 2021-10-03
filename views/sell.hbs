@@ -1,0 +1,53 @@
+<div class="my-5">
+    {{#each rows}}
+    
+        <strong>Bank Name : </strong>{{this.name}}
+        <hr>
+        <strong>Per Stock Cost : </strong> Rs. {{this.per_s_cost}}<hr>
+        <strong>Number of stocks : </strong>{{this.stock_amt}} only<hr>
+        <strong>Amount : </strong> Rs. {{this.amount}}<hr>
+        <strong>Bought Date : </strong>{{this.date}}<hr>
+    {{/each}}
+</div>
+
+
+<!-- Button trigger modal -->
+{{!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sellModal">
+    Launch demo modal
+</button> --}}
+
+<!-- Modal -->
+<div class="modal fade" id="sellModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {{#each rows}}
+                <form method="POST" action="/final_sell/{{this.id}}" novalidate>
+                {{/each
+                }}
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Enter the number of stocks that you want to sell</label>
+                        <input type="number" name = "s_sell" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        
+                    </div>
+                    
+                    
+                    <button type="submit" class="btn btn-primary">Confirm Sell</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-12 d-grid">
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sellModal">I want to sell this stock</button>
+
+</div>

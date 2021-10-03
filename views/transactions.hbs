@@ -1,0 +1,37 @@
+
+</head>
+
+<body>
+ 
+<table class="table table-striped" id="myTable">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Bank Name</th>
+            <th class="text-center" scope="col">Stocks</th>
+            <th class="text-center" scope="col">Per stock cost</th>
+            <th class="text-center" scope="col">Total Amount</th>
+            <th class="text-center" scope="col">Date and Time</th>
+            <th class="text-center" scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each rows}}
+        <tr>
+           
+            <script>document.write("<th scope='row'>"+ ({{@index}} + 1)+ "</th>")</script>
+            <td>{{this.bname}}</td>
+            <td class="text-center"> {{this.num_stock}} units</td>
+            <td class="text-center">Rs. {{this.per_unit}} /-</td>
+            <td class="text-center">Rs. {{this.amount}} /-</td>
+            <td class="text-center">{{this.date}}</td>
+            <td class="text-center">{{this.status}}</td>
+        </tr>
+        {{/each}}
+        
+    </tbody>
+</table>
+  
+
+
+  

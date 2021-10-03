@@ -1,0 +1,49 @@
+
+
+
+
+<h1 class="text-center">Welcome, to the my Stock List</h1>
+
+<div>
+
+    <marquee direction="left">
+        <h3> The shares that you have bought, with full details are listed Below</h3>
+    </marquee>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Bank Name</th>
+            <th class="text-center" scope="col">Per Stock Cost</th>
+            <th class="text-center" scope="col">Number of stock</th>
+            <th class="text-center" scope="col">Total Amount</th>
+            <th class="text-center" scope="col">Date</th>
+            <th class="text-center"  scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each rows}}
+        <tr>
+
+            <script>document.write("<th scope='row'>" + ({{@index}} + 1) + "</th>")</script>
+            <td >{{this.name}}</td>
+            <td class="text-center" >Rs. {{this.per_s_cost}}</td>
+            <td class="text-center">{{this.stock_amt}} units</td>
+            <td class="text-center">Rs. {{this.amount}} /-</td>
+            <td class="text-center">{{this.date}}</td>
+            <td class="text-center">
+                {{!-- <div class="row"> --}}
+                    <a href="/sell/{{this.id}}" class="btn btn-primary btn-sm"> <i
+                            class="bi bi-cash-coin"></i>Sell</a>
+                    <a href="/detail/{{this.id}}" class="btn btn-primary btn-sm"> <i
+                            class="bi bi-receipt"></i>Detail</a>
+                    {{!--
+                </div> --}}
+            </td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>

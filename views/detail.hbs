@@ -1,0 +1,20 @@
+<h1>Full details of "{{bname}}"</h1><hr>
+
+<b>Total investment till now : </b>Rs. {{T_invest}}<hr>
+<b>Total Sold money till now : Rs. </b>{{T_sold}}<hr>
+<b>Current money available to this bank : </b>{{curr_amt}}<hr>
+<script>
+    let t_in = {{T_invest}}
+    let t_so = {{T_sold}}
+    let amt = parseInt(t_in - t_so)
+    if (amt < 0){
+        document.write("<b>Total profite by this bank till now </b>: Rs. "+Math.abs(amt)+" /-<hr>")
+    }
+    else if(amt > 0){
+        document.write("<b>Total Loss by this bank till now </b>: Rs. "+(-amt)+" /-<hr>")
+    }
+    else{
+        document.write('<b>Newtral neither you are in loss nor profit</b>')
+    }
+</script>
+<a href="/done" class="btn btn-primary col-12 d-grid">Done</a>

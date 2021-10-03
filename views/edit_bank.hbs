@@ -1,0 +1,28 @@
+{{#each rows}}
+<form action="/update/{{this.id}}" method="POST" novalidate>
+    <div class="row my-4">
+        <div class="col-6">
+            <div class="form-floating mb-3">
+                <input type="text" name="bname" value="{{this.name}}" class="form-control">
+                <label for="floatingInput">Name of the Bank</label>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-floating mb-3">
+                <input type="text" name="available" value="{{this.available_stock}}" class="form-control">
+                <label for="floatingInput">Available quantity of stocks</label>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-floating mb-3">
+                <input type="text" name="price" value="{{this.per_s_price}}" class="form-control">
+                <label for="floatingInput">Price per stock</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 d-grid">
+        <button class="btn btn-success align-end" type="submit">Submit</button>
+    </div>
+</form>
+{{/each}}
